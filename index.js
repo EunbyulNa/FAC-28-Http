@@ -10,15 +10,23 @@ autocompleteInput.on('select', (location) => {
 // latitude, longitude value
 const { properties:{lat,lon} } = location
 
+//Show loader 
+let loader = document.querySelector('.loader')
+loader.style.display = 'block'
+
+
 fetch(`https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=600&height=400&center=lonlat:${lon},${lat}&zoom=14&marker=lonlat:${lon},${lat};color:%23ff0000;size:medium&apiKey=${ApiKey}`)
 .then((res)=>{
     if(!res.ok) throw new Error(res.status)
     return res;
 })
+
 .then((data)=>{
     let {url} = data
     let mapImg = document.querySelector('#mapImg')
     mapImg.src= data.url
+    //Hide loader display
+    loader.style.display = 'none'
 })
 .catch((err)=>{
     console.log(err)
