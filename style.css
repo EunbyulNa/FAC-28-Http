@@ -17,13 +17,16 @@ header{
 }
 
 section {
+    position: relative;
+    border: 1px solid red;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1rem;
     margin-top: 2rem;
 }
 
 .main{
-    text-align: center;
-    max-width: 60rem;
-    margin: 0 auto;
+    text-align: center; 
 }
 
 .main  > * + * {
@@ -31,13 +34,12 @@ section {
 }
 
 .loader {
-    display: none;
     position: absolute;
-    top: 40%;
-    left: 45%;
-    transform: translate(-45%, 0);
     z-index: 100;
-    margin: auto;
+    left: 44%;
+    transform: translate(-44%, 0);
+    display: block;
+    margin: 2rem auto;
     border: 20px solid #EAF0F6;
     border-radius: 50%;
     border-top: 20px solid #FF7A59;
@@ -52,13 +54,15 @@ section {
   }
 
 .autocomplete-container {
-    max-width: 60rem;
-    margin: 1rem auto;
+   margin-top: 1rem;
     position: relative;
 }
 
 .map {
-  max-width: 60rem;
-  margin: 0 auto;
+    margin-top: 1rem;
+}
+
+#mapImg{
+    width: 100%;
 }
 
