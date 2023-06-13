@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@geoapify/geocoder-autocomplete@^1/styles/minimal.css">
     <link rel="stylesheet" href="node_modules/@geoapify/geocoder-autocomplete/styles/minimal.css">
 
     <title>Sunrise-Sunset</title>
@@ -23,13 +24,15 @@
         </div>
 
         <div id="autocomplete" class="autocomplete-container"></div> 
+        
+            <div class="loader"></div>
 
-        <div id="map">     
+        <div class="map">
+            <img id="mapImg" >
         </div>
-
-
     </section>
     <script src="https://use.fontawesome.com/8282ce4e26.js"></script>
+    <script src="https://unpkg.com/@geoapify/geocoder-autocomplete@^1/dist/index.min.js"></script>
     <script src="node_modules/@geoapify/geocoder-autocomplete/dist/index.min.js"></script>
     <script src="index.js"></script>
 </body>

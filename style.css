@@ -17,22 +17,51 @@ header{
 }
 
 section {
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1rem;
     margin-top: 2rem;
 }
 
 .main{
-    text-align: center;
-    max-width: 60rem;
-    margin: 0 auto;
+    text-align: center; 
 }
 
 .main  > * + * {
     margin-top: 1rem;
 }
 
+.loader {
+    position: absolute;
+    z-index: 100;
+    left: 44%;
+    transform: translate(-44%, 0);
+    display: none;
+    margin: 2rem auto;
+    border: 20px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 20px solid #FF7A59;
+    width: 100px;
+    height: 100px;
+    animation: spinner 2s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 .autocomplete-container {
-    max-width: 60rem;
-    margin: 1rem auto;
+   margin-top: 1rem;
     position: relative;
+}
+
+.map {
+    margin-top: 1rem;
+}
+
+#mapImg{
+    width: 100%;
 }
 
