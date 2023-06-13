@@ -32,11 +32,14 @@ section {
     margin-top: 1rem;
 }
 
-.loader {
+.loader-container{ 
     position: absolute;
     z-index: 100;
-    left: 44%;
-    transform: translate(-44%, 0);
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.loader { 
     display: none;
     margin: 2rem auto;
     border: 20px solid #EAF0F6;
@@ -64,4 +67,5 @@ section {
 #mapImg{
     width: 100%;
 }
+
 
