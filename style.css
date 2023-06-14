@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +12,16 @@ header{
 }
 
 .head {
+    font-family: 'Outfit', sans-serif;
     max-width: 60rem;
-    margin: 0 auto;  
+    margin: 0 auto;
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
+}
+
+.head i {
+    padding: 0 0.5rem 0 0;
 }
 
 section {
