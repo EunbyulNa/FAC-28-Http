@@ -7,6 +7,7 @@ const autocompleteInput = new autocomplete.GeocoderAutocomplete(
     { /* Geocoder options */ });
 
 autocompleteInput.on('select', (location) => {
+  
     // latitude, longitude value
     const { properties: { lat, lon } } = location
 
@@ -28,8 +29,10 @@ autocompleteInput.on('select', (location) => {
             //Hide loader display
             loader.style.display = 'none'
         })
-        .catch((err) => {
-            console.log(err)
+        .catch((err)=>{
+            const errMsg = document.querySelector('#err-msg')
+            loader.style.display = 'none';
+            errMsg.style.display = 'block'
         })
 
     // sunrise-sunset API fetch request
