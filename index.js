@@ -29,7 +29,9 @@ fetch(`https://maps.geoapify.com/v1/staticmap?style=osm-carto&center=lonlat:${lo
     loader.style.display = 'none'
 })
 .catch((err)=>{
-    console.log(err)
+    const errMsg = document.querySelector('#err-msg')
+    loader.style.display = 'none';
+    errMsg.style.display = 'block'
 })
 
 });
