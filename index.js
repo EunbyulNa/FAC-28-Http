@@ -36,7 +36,7 @@ autocompleteInput.on('select', async (location) => {
       const todayResult = today.results.day_length;
       console.log("Today is " + todayResult);
     } catch (error) {
-      errMsg.textContent = "Sorry, we can not update sunset-sunrise"
+      errMsg.textContent = "Sorry, we can not update sunrise-sunset"
       errMsg.style.display = 'block'
       loader.style.display = 'none';
       console.log(error);
@@ -49,7 +49,7 @@ autocompleteInput.on('select', async (location) => {
       let monthString = month.toString().padStart(2, '0');
 
       let sum = 0;
-      let daysInMonth = 0;
+      let daysInMonth = new Date(2023, month, 0).getDate();
 
       for (let day = 1; day <= 31; day++) {
         let dayString = day.toString().padStart(2, '0');
@@ -64,10 +64,10 @@ autocompleteInput.on('select', async (location) => {
           if (days) {
             let hours = Number(days.split(':')[0]);
             sum += hours;
-            daysInMonth++;
+    
           }
         } catch (error) {
-            errMsg.textContent = "Sorry, we can not update Montly average daylight"
+            errMsg.textContent = "Sorry, we can not update the monthly average daylight"
             errMsg.style.display = 'block'
             loader.style.display = 'none';
           console.log(error);
@@ -92,7 +92,7 @@ autocompleteInput.on('select', async (location) => {
         let graphImg = document.querySelector('#graphImg');
         graphImg.src = graph.url
     } catch (error) {
-        errMsg.textContent = "Sorry, we can not update Montly average daylight graph"
+        errMsg.textContent = "Sorry, we can not update the monthly average daylight graph."
         errMsg.style.display = 'block'
         loader.style.display = 'none';
         console.log(error)
@@ -102,7 +102,7 @@ autocompleteInput.on('select', async (location) => {
         loader.style.display = 'none';
 
   } catch (error) {
-    errMsg.textContent = "Sorry, we can not update Montly map"
+    errMsg.textContent = "Sorry, we can not update map"
     errMsg.style.display = 'block'
     loader.style.display = 'none';
     console.log(error);
