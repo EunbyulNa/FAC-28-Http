@@ -77,8 +77,15 @@ section {
 }
 
 #err-msg{
- display: none;
-  margin-top: 1rem;
+    display: none;
+    width: 50%;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-align: center;
+    border: 1px solid red;
+    padding: 1rem;
+    margin: 1rem auto;
+ 
 }
 
 

@@ -1,6 +1,7 @@
 //API key (We need to hide it later!)
 const  dayLength =[];
 const ApiKey = '666dbb9c6137456690cfd79fe7ac0563';
+const errMsg = document.querySelector('#err-msg');
 
 const autocompleteInput = new autocomplete.GeocoderAutocomplete(
   document.getElementById("autocomplete"),
@@ -35,6 +36,9 @@ autocompleteInput.on('select', async (location) => {
       const todayResult = today.results.day_length;
       console.log("Today is " + todayResult);
     } catch (error) {
+      errMsg.textContent = "Sorry, we can not update sunset-sunrise"
+      errMsg.style.display = 'block'
+      loader.style.display = 'none';
       console.log(error);
     }
 
@@ -63,6 +67,9 @@ autocompleteInput.on('select', async (location) => {
             daysInMonth++;
           }
         } catch (error) {
+            errMsg.textContent = "Sorry, we can not update Montly average daylight"
+            errMsg.style.display = 'block'
+            loader.style.display = 'none';
           console.log(error);
         }
       }
@@ -85,6 +92,9 @@ autocompleteInput.on('select', async (location) => {
         let graphImg = document.querySelector('#graphImg');
         graphImg.src = graph.url
     } catch (error) {
+        errMsg.textContent = "Sorry, we can not update Montly average daylight graph"
+        errMsg.style.display = 'block'
+        loader.style.display = 'none';
         console.log(error)
     }
 
@@ -92,6 +102,9 @@ autocompleteInput.on('select', async (location) => {
         loader.style.display = 'none';
 
   } catch (error) {
+    errMsg.textContent = "Sorry, we can not update Montly map"
+    errMsg.style.display = 'block'
+    loader.style.display = 'none';
     console.log(error);
   }
 });
