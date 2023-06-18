@@ -112,6 +112,7 @@ section {
 
 .sunset-times {
     display: none;
+}
 
 #err-msg{
     display: none;
@@ -124,7 +125,6 @@ section {
     margin: 1rem auto;
  
 }
-
 
 
 #graphImg {
