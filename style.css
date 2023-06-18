@@ -5,9 +5,9 @@
     padding: 0;
 }
 
-header{
+header {
     padding: 1rem;
-    color:#ffffff;
+    color: #ffffff;
     background-color: #043050;
 }
 
@@ -32,22 +32,22 @@ section {
     margin-top: 2rem;
 }
 
-.main{
-    text-align: center; 
+.main {
+    text-align: center;
 }
 
-.main  > * + * {
+.main>*+* {
     margin-top: 1rem;
 }
 
-.loader-container{ 
+.loader-container {
     position: absolute;
     z-index: 100;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
-.loader { 
+.loader {
     display: none;
     margin: 2rem auto;
     border: 20px solid #EAF0F6;
@@ -56,15 +56,20 @@ section {
     width: 100px;
     height: 100px;
     animation: spinner 2s linear infinite;
-  }
-  
-  @keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 .autocomplete-container {
-   margin-top: 1rem;
+    margin-top: 1rem;
     position: relative;
 }
 
@@ -72,9 +77,41 @@ section {
     margin-top: 1rem;
 }
 
-#mapImg{
+#mapImg {
     width: 100%;
 }
+
+
+
+.bar-container {
+    margin: auto;
+    display: none;
+    justify-content: center;
+    width: 75vw;
+}
+
+.morning-bar, .day-bar, .night-bar {
+    height: 20px;
+    width: 33%;
+    box-shadow: 1px 1px 1px;
+}
+
+.morning-bar {
+    background-color: #043050;
+    border-radius: 10px 0 0 10px;
+}
+
+.night-bar {
+    background-color: #043050;
+    border-radius: 0 10px 10px 0;
+}
+
+.day-bar {
+    background-color: gold;
+}
+
+.sunset-times {
+    display: none;
 
 #err-msg{
     display: none;
@@ -92,4 +129,5 @@ section {
 
 #graphImg {
     width: 100%;
+
 }

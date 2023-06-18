@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,32 +11,48 @@
 
     <title>Sunrise-Sunset</title>
 </head>
+
 <body>
     <header>
         <div class="head">
-         <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i> 
-         <h1>SolSearch</h1>
+            <i class="fa fa-sun-o fa-2x" aria-hidden="true"></i>
+            <h1>SolSearch</h1>
         </div>
     </header>
     <section>
         <div class="main">
-          <h2>SUNSET AND SUNRISE TIMES</h2>
-          <p>Check sunrise, sunset, daylight for any location in the world!</p>
+            <h2>SUNSET AND SUNRISE TIMES</h2>
+            <p>Check sunrise, sunset, daylight for any location in the world!</p>
         </div>
 
-        <div id="autocomplete" class="autocomplete-container"></div> 
-    
-    
-            <div class="loader-container">
-                <div class="loader"></div>
-            </div>
+        <div id="autocomplete" class="autocomplete-container"></div>
 
-            <div id="err-msg">
-             </div>
+        <div class="loader-container">
+            <div class="loader"></div>
+        </div>
+
+
+        <div id="err-msg">
+            <p> Sorry, Something went wrong. Can you try agin?</p>
+        </div>
+
+
+        <div class="sunset-times">
+            <h3>Sunrise: <span class="sunrise-text"></span></h3>
+            <h3>Sunset: <span class="sunset-text"></span></h3>
+            <h3>Solar Noon: <span class="noon-text"></span></h3>
+            <h3>Hours of Sunlight: <span class="length-text"></span></h3>
+        </div>
+
+        <div class="bar-container">
+            <div class="morning-bar"></div>
+            <div class="day-bar"></div>
+            <div class="night-bar"></div>
+        </div>
 
 
         <div class="map">
-            <img id="mapImg" >
+            <img id="mapImg">
         </div>
 
         <div class="graph">
@@ -47,4 +64,5 @@
     <script src="node_modules/@geoapify/geocoder-autocomplete/dist/index.min.js"></script>
     <script src="index.js"></script>
 </body>
+
 </html>
