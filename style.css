@@ -81,8 +81,6 @@ section {
     width: 100%;
 }
 
-
-
 .bar-container {
     margin: auto;
     display: none;
@@ -123,11 +121,8 @@ section {
     border: 1px solid red;
     padding: 1rem;
     margin: 1rem auto;
- 
 }
-
 
 #graphImg {
     width: 100%;
-
 }
