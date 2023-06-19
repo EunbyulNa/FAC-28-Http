@@ -1,14 +1,14 @@
 //API key (We need to hide it later!)
-const  dayLength =[];
+const  dayLengthArr =[];
 const ApiKey = '666dbb9c6137456690cfd79fe7ac0563';
 const errMsg = document.querySelector('#err-msg');
 
 const autocompleteInput = new autocomplete.GeocoderAutocomplete(
-
     document.getElementById("autocomplete"),
     ApiKey,
     { /* Geocoder options */ });
-)
+
+
 // variables to store data each time the API is called
 let sunrise, sunset, dayLength, noon;
 // number of seconds in a day
@@ -52,9 +52,9 @@ autocompleteInput.on('select', async (location) => {
       const sunApiToday = await fetch(`https://api.sunrisesunset.io/json?lat=${lat}&lng=${lon}`);
       if (!sunApiToday.ok) throw new Error(sunApiToday.status);
       const today = await sunApiToday.json();
-      const todayResult = today.results.day_length;
-      console.log("Today is " + todayResult);
+      const data = today.results
        sunrise = data.sunrise;
+       console.log(sunrise)
             sunset = data.sunset;
             dayLength = data.day_length;
             noon = data.solar_noon;
@@ -92,7 +92,7 @@ autocompleteInput.on('select', async (location) => {
           if (!sunApiAverage.ok) throw new Error(sunApiAverage.status);
           const result = await sunApiAverage.json();
           const days = result.results.day_length;
-          dayLength.push(days);
+          dayLengthArr.push(days);
 
           if (days) {
             let hours = Number(days.split(':')[0]);
