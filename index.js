@@ -8,7 +8,6 @@ const autocompleteInput = new autocomplete.GeocoderAutocomplete(
     ApiKey,
     { /* Geocoder options */ });
 
-
 // variables to store data each time the API is called
 let sunrise, sunset, dayLength, noon;
 // number of seconds in a day
@@ -25,9 +24,6 @@ const sunriseText = document.querySelector('.sunrise-text');
 const sunsetText = document.querySelector('.sunset-text');
 const noonText = document.querySelector('.noon-text');
 const lengthText = document.querySelector('.length-text');
-
-
-
 
 autocompleteInput.on('select', async (location) => {
   // latitude, longitude value
@@ -140,7 +136,6 @@ autocompleteInput.on('select', async (location) => {
     loader.style.display = 'none';
     console.log(error);
   }
-
 });
 
 autocompleteInput.on('suggestions', (suggestions) => {
@@ -169,4 +164,3 @@ function toSeconds(time) {
     total += hours + minutes + seconds;
     return total;
 }
-
