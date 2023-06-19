@@ -142,7 +142,6 @@ autocompleteInput.on('suggestions', (suggestions) => {
   // process suggestions here
 });
 
-
 // function to convert time strings into seconds from 00:00:00 AM
 function toSeconds(time) {
     let seconds, minutes, hours;
