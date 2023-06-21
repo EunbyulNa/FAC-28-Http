@@ -12,6 +12,8 @@ let sunrise, sunset, dayLength, noon;
 const DAY_SECONDS = 24 * 3600;
 // grab the divs to show/hide on making a query
 const dataText = document.querySelector('.sunset-times');
+const youAreHere = document.querySelector('.you-are-here');
+const currentTime = document.querySelector('.current-time');
 const barContainer = document.querySelector('.bar-container');
 // grab the 3 divs forming the 3-segment bar display
 const morningBar = document.querySelector('.morning-bar');
@@ -81,7 +83,11 @@ function displaySunriseSunset(lat, lon, today) {
   morningBar.style.width = (toSeconds(sunrise) * 100 / DAY_SECONDS) + '%';
   dayBar.style.width = ((toSeconds(sunset) - toSeconds(sunrise)) * 100 / DAY_SECONDS) + '%';
   nightBar.style.width = ((DAY_SECONDS - toSeconds(sunset)) * 100 / DAY_SECONDS) + '%';
+  const TIME = new Date().toLocaleTimeString();
+  currentTime.innerHTML = TIME.slice(0, TIME.length-3);
   dataText.style.display = 'block';
+  youAreHere.style.left = ((toSeconds(TIME)/DAY_SECONDS) * 100 - 50) + '%';
+  youAreHere.style.display = 'flex';
   barContainer.style.display = 'flex';
 }
 
@@ -162,7 +168,7 @@ autocompleteInput.on('select', async (location) => {
   showLoader();
   await fetchStaticMap(lat,lon);
   await fetchSunriseSunset(lat,lon);
-  await fetchMonthlyAverage(lat, lon)
+  await fetchMonthlyAverage(lat, lon);
   hideLoader();
 });
 

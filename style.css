@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
 header {
     padding: 1rem;
     color: #ffffff;
@@ -81,14 +85,47 @@ section {
     width: 100%;
 }
 
-.bar-container {
+.present-container {
+    margin: auto;
+    width: 75vw;
+    max-width: 700px;
+}
+
+.you-are-here {
+    padding-top: 15px;
+    position: relative;
+    left: -50%;
     margin: auto;
     display: none;
     justify-content: center;
-    width: 75vw;
+    align-items: center;
+    width: 0px;
+    flex-direction: column;
 }
 
-.morning-bar, .day-bar, .night-bar {
+.caret {
+    width: 0px;
+}
+
+.caret {
+    content: '';
+    border-top: 12px solid #000000;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+}
+
+.bar-container {
+    margin: auto;
+    padding-bottom: 15px;
+    display: none;
+    justify-content: center;
+    width: 75vw;
+    max-width: 700px;
+}
+
+.morning-bar,
+.day-bar,
+.night-bar {
     height: 20px;
     width: 33%;
     box-shadow: 1px 1px 1px;
@@ -110,9 +147,20 @@ section {
 
 .sunset-times {
     display: none;
+    margin-left:auto; 
+    margin-right:auto; 
+    width:250px;
 }
 
-#err-msg{
+.sunset-times th {
+    text-align: right;
+}
+
+.sunset-times th, .sunset-times td {
+    padding: 5px;
+}
+
+#err-msg {
     display: none;
     width: 50%;
     background-color: #ff0000;
